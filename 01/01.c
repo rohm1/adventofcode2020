@@ -28,11 +28,9 @@ int main(int argc, char* argv[])
     int size = 0;
 
     FILE* input = fopen("input.txt", "r");
-    char* line = (char*) malloc(200 * sizeof(char));
-    while (fgets(line, 200, input) != NULL) {
-        i = strlen(line);
-
-        if (i < 2) {
+    char* line = (char*) malloc(10 * sizeof(char));
+    while (fgets(line, 10, input) != NULL) {
+        if (strlen(line) < 2) {
             continue;
         }
 
@@ -43,10 +41,10 @@ int main(int argc, char* argv[])
     int * numbers = malloc(size * sizeof(int));
 
     fseek(input, 0, SEEK_SET);
-    line = (char*) malloc(200 * sizeof(char));
+    line = (char*) malloc(10 * sizeof(char));
     int number;
     i = 0;
-    while (fgets(line, 200, input) != NULL) {
+    while (fgets(line, 10, input) != NULL) {
         if (strlen(line) < 2) {
             continue;
         }
@@ -62,7 +60,6 @@ int main(int argc, char* argv[])
     int part1Solved = 0;
     for (i = 0; !part1Solved && i < size; i++) {
         int j;
-        int found = 0;
         int search = TARGET_SUM - numbers[i];
         for (j = 0; j < size; j++) {
             if (numbers[j] == search) {
