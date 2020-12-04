@@ -1,5 +1,4 @@
 module.exports = (input) => {
-    const start = process.hrtime();
     const lines = input.split('\n');
 
     let validCount1 = 0;
@@ -35,6 +34,4 @@ module.exports = (input) => {
 
     console.log('Part 1: ', validCount1);
     console.log('Part 2: ', validCount2);
-    let time = process.hrtime(start);
-    console.log('Time: ', (1000 * time[0] + Math.floor(time[1] / 1000000)) + 'ms');
 };
