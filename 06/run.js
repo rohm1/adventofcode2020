@@ -12,8 +12,8 @@ module.exports = (input) => {
         if (!line) {
             count1 += new Set(''.concat(...groupData)).size;
             count2 += groupData
-                .map(x => new Set(x))
-                .reduce((accumulator, currentValue) => [...accumulator].filter((x) => currentValue.has(x)), [...groupData[0]])
+                .splice(1)
+                .reduce((accumulator, currentValue) => accumulator.filter((x) => currentValue.includes(x)), [...groupData[0]])
                 .length;
             groupData = [];
             continue;
