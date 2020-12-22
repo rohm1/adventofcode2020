@@ -66,5 +66,5 @@ module.exports = (input) => {
         .join(',');
 
     console.log('Part 1: ', count);
-    console.log('Part 2: ', dangerousIngredientList)
+    console.log('Part 2: ', dangerousIngredientList);
 };
